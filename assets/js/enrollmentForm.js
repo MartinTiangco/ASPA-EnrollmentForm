@@ -350,12 +350,15 @@ proceedPayment.onclick = function() {
 	}
 	else if (toggled_index == 4) {
 		//Stripe Payment
-		$('#enrollment-form').attr('action', base_url + 'EnrollmentForm/MakeStripePayment');
+		alert('asdf');
+		$('#enrollment-form').attr('action', base_url+ 'EnrollmentForm/MakeStripePayment');
 		document.getElementById("enrollment-form").submit();
 		//window.open('http://localhost/ASPA-EnrollmentForm/EnrollmentForm/MakeStripePayment?email=');
 	}
 	else {
 		//IEpay
+		$('#enrollment-form').attr('action', base_url + 'EnrollmentForm/MakeMYPayment');
+		document.getElementById("enrollment-form").submit();
 	}
 	// alert("Taking you to proceed payment!");
 };
