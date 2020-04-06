@@ -110,6 +110,26 @@ class EnrollmentForm extends ASPA_Controller
         }
     }
 
+    public function MakeMYPayment()
+    {
+        // Receive data from form, method=POST
+        $data['name'] = $this->input->post('name');
+        $data['email'] = $this->input->post('email');
+        $data['url'] = "";
+
+        // Put the data into spreadsheet
+        $this->load->model('Gsheet_Interface_Model');
+        $this->Gsheet_Interface_Model->record_to_sheet($data['email'],$data['name'],'MY',FALSE);
+
+        //Generating the session id, POST DATA TO API SITE
+        $this->load->model('MYPay_Model');
+        $data['url'] = $this->MYPay_Model->MakeMYPay($data['email']);
+
+        // Initiate the stripe payment
+        $this->load->view('MYPay.php', $data);
+
+    }
+
     public function IEPayPaymentSucessful() 
     {
 

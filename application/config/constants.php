@@ -97,4 +97,7 @@ define("SHEETNAME", "Sheet1");
 define('PUBLICKEY', 'pk_test_A4wjqVPPn530rgAXv6sHKgSl00opCMVX9A');
 define('SECRETKEY', 'sk_test_OMC00A11yJUakUU4kx6KoGTp0028EYnLBa');
 
+define('MYPAYMID', '11239');
+define('MYPAYKEY', 'a3c92b6b12028fb9afa20d248380426c');
+
 
