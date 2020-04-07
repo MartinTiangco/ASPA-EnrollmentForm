@@ -124,7 +124,7 @@ class EnrollmentForm extends ASPA_Controller
         // Receive data from form, method=POST
         $data['name'] = $this->input->post('name');
         $data['email'] = $this->input->post('email');
-        $data['url'] = "";
+        $data['MYd'] = "";
 
         // Put the data into spreadsheet
         $this->load->model('Gsheet_Interface_Model');
@@ -132,7 +132,7 @@ class EnrollmentForm extends ASPA_Controller
 
         //Generating the session id, POST DATA TO API SITE
         $this->load->model('MYPay_Model');
-        $data['url'] = $this->MYPay_Model->MakeMYPay($data['email']);
+        $data['MYd'] = $this->MYPay_Model->MakeMYPay($data['email']);
 
         // Initiate the MYPay payment
         $this->load->view('MYPay.php', $data);
@@ -142,8 +142,9 @@ class EnrollmentForm extends ASPA_Controller
     public function IEPayPaymentSucessful() 
     {
 
+        
         //Redirect to the page with green tick
-        $this->load->view('PaymentSuccessful.php',$data);
+        //$this->load->view('PaymentSuccessful.php',$data);
         
     }
 
