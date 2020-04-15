@@ -28,7 +28,7 @@ class Stripe_Model extends CI_Model {
             'name' => 'ASPA Event entry',
             'description' => 'Your entry into the next ASPA event!',
             'images' => ['https://example.com/t-shirt.png'],
-            'amount' => 300,
+            'amount' => AMOUNT,
             'currency' => 'NZD',
             'quantity' => 1,
         ]],
